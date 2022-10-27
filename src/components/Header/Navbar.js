@@ -8,7 +8,7 @@ export default function Navbar(){
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src={Logo} alt="logo" />
-                    <span className="fs-6 text-secondary">Pro Bono</span>
+                    <span className="ms-3 fs-6 text-secondary">Pro Bono</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
