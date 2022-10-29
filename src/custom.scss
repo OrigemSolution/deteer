@@ -1,10 +1,12 @@
+
+
 @font-face {
   font-family: 'RobotoMono';
   src: url('./RobotoMono-VariableFont_wght.ttf') format('truetype');
 }
 
 $font-family-base: 'RobotoMono';
-
+$body-bg: #F5F5F5;
 $secondary: #A1A1AA;
 
 $dark: #3E3E3E;
@@ -37,7 +39,30 @@ $utilities: map-merge((
             75: 75vw,
             100: 100vw
         )
+    ),
+    "translate-middle": (
+      property: transform,
+      class: translate-middle,
+      responsive: true,
+      values: (
+        null: translate(-50%, -50%),
+        x: translateX(-50%),
+        y: translateY(-50%),
+      )
+    ),
+    "width": (
+      property: width,
+      class: w,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+      )
     )
 ), $utilities);
 
 @import '~bootstrap/scss/bootstrap.scss';
+
