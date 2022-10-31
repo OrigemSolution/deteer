@@ -6,7 +6,7 @@ export default function SideBar(){
             <div className="mt-4">
                 <p className="h5 fw-bold">Roles</p>
                 <select className="form-select" aria-label="Default select example">
-                    <option selected>All</option>
+                    <option value="all">All</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -15,7 +15,7 @@ export default function SideBar(){
             <div className="mt-4">
                 <p className="h5 fw-bold">Level</p>
                 <select className="form-select" aria-label="Default select example">
-                    <option selected>All</option>
+                    <option value="all">All</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -23,7 +23,7 @@ export default function SideBar(){
             </div>
             <div className="form-check form-switch mt-4">
                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" data-onstyle="warning"/>
-                <label className="form-check-label" for="flexSwitchCheckDefault">Only Remote</label>
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Only Remote</label>
             </div>
         </div>
         

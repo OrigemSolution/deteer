@@ -1,7 +1,14 @@
+import { useState } from "react";
+
 export default function JobDescription({job}){
+    
+        const [showDelete, setShowDelete] = useState(false);
+
+        
+
         if(job) return(
                 <>
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between position-relative">
                     <div>
                         <p className="h5">
                             {job['jobDetails'].role} 
@@ -15,7 +22,13 @@ export default function JobDescription({job}){
                     <div>
                         <p className="fs-6 text-warning">
                             {job['jobDetails'].datePast} days ago
+                            <i className="bi-three-dots mx-3" onClick={() => setShowDelete(!showDelete)}></i>
                         </p>
+                        <div className={showDelete ? "position-absolute vw-25 d-block" : "position-absolute vw-25 d-none"}>
+                            <button className="btn-outline-secondary border-0 text-danger fs-6 w-50">
+                                <i className="bi-trash"></i> Delete Opening
+                            </button>
+                        </div>
                     </div>
                 </div> 
                 <div className="text-secondary">
