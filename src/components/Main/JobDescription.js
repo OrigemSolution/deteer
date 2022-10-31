@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Modal  from "./AModal";
 
 export default function JobDescription({job}){
     
         const [showDelete, setShowDelete] = useState(false);
-
+        const [showModal, setShowModal] = useState(false)
         
 
         if(job) return(
@@ -25,7 +26,8 @@ export default function JobDescription({job}){
                             <i className="bi-three-dots mx-3" onClick={() => setShowDelete(!showDelete)}></i>
                         </p>
                         <div className={showDelete ? "position-absolute vw-25 d-block" : "position-absolute vw-25 d-none"}>
-                            <button className="btn-outline-secondary border-0 text-danger fs-6 w-50">
+                            <button className="btn-outline-secondary border-0 text-danger fs-6 w-50"
+                             data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => setShowModal(!showModal)}>
                                 <i className="bi-trash"></i> Delete Opening
                             </button>
                         </div>
@@ -43,6 +45,11 @@ export default function JobDescription({job}){
                     <p>{job.summary} </p>
                 </div>
                 <hr />
+                
+
+                {showModal && 
+                <Modal id="deleteModal"/>}
+
                 </>
             )
         
