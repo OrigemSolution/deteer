@@ -1,6 +1,7 @@
 import { useState } from "react";
 import JobDescription from "./JobDescription";
 import JobsList from "./JobsList";
+import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 
 const response = [
@@ -54,7 +55,7 @@ export default function Main(){
 
     return(
        <div className="container">
-        <div className="row py-4 vh-100">   
+        <div className="row pt-4 vh-100">   
             <div className="col-4 bg-white h-100 border-end pt-3">
                 <JobsList jobList={jobDetailsOnly} handleClick={ feedDescriptionArray}/>
             </div>
@@ -65,6 +66,7 @@ export default function Main(){
                 <SideBar />
             </div>
         </div>
+        <Pagination />
        </div>
     )
 }
