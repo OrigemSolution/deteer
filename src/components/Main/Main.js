@@ -1,4 +1,6 @@
-import JobsList from "./JobsList"
+import { useState } from "react";
+import JobDescription from "./JobDescription";
+import JobsList from "./JobsList";
 
 const response = [
     {
@@ -35,15 +37,30 @@ const response = [
 
 const jobDetailsOnly = response.map(item => item.jobDetails)
 
+const getSpecificJob = (index) => {
+    return (response[index]);
+}
+
+
+
 export default function Main(){
+
+    const [jobDescArray, setJobDescArray] = useState(null);
+
+    const feedDescriptionArray = (i) => {
+        console.log('clicked me ')
+        setJobDescArray(getSpecificJob(i))
+    }
 
     return(
        <div className="container">
-        <div className="row py-4 vh-100">
+        <div className="row py-4 vh-100">   
             <div className="col-4 bg-white h-100 border-end pt-3">
-                <JobsList jobList={jobDetailsOnly} />
+                <JobsList jobList={jobDetailsOnly} handleClick={ feedDescriptionArray}/>
             </div>
-            <div className="col-6 bg-white h-100"></div>
+            <div className="col-6 bg-white h-100 p-3">
+                <JobDescription job={jobDescArray} />
+            </div>
             <div className="col-2 h-50"></div>
         </div>
        </div>
