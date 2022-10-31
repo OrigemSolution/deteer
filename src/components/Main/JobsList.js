@@ -7,7 +7,7 @@ export default function JobsList({jobList, handleClick}){
                     <div key={i} onClick={() => handleClick(i)}>
                         <div className="px-3 d-flex justify-content-between">
                             <div>
-                                <p className="h5">{job.role}</p>
+                                <p className="h5 fw-bold">{job.role}</p>
                                 <p className="text-secondary">{job.level}</p>
                             </div>
                             <div>
