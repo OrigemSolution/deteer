@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal  from "./AModal";
+import ConfirmModal  from "../Modals/ConfirmModal";
 
 export default function JobDescription({job}){
     
@@ -27,7 +27,7 @@ export default function JobDescription({job}){
                         </p>
                         <div className={showDelete ? "position-absolute vw-25 d-block" : "position-absolute vw-25 d-none"}>
                             <button className="btn-outline-secondary border-0 text-danger fs-6 w-50"
-                             data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => setShowModal(!showModal)}>
+                             data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => setShowModal(!showModal)} data-bs-backdrop="false" data-bs-keyboard="false">
                                 <i className="bi-trash"></i> Delete Opening
                             </button>
                         </div>
@@ -46,10 +46,11 @@ export default function JobDescription({job}){
                 </div>
                 <hr />
                 
-
-                {showModal && 
-                <Modal id="deleteModal"/>}
-
+                    <ConfirmModal id="deleteModal" headText="Delete Opening"
+                     descText="Are you sure you want to delete this opening? This action would be permanent"
+                     btnType="btn-danger"
+                     actionText="Yes, Delete Opening"/>
+               
                 </>
             )
         
