@@ -1,4 +1,4 @@
-export default function ConfirmModal({id, headText, descText}){
+export default function InfoModal({id, headText, descText}){
     return(
         <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">

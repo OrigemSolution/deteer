@@ -3,7 +3,7 @@ import InfoModal from "../Modals/InfoModal"
 export default function ConfirmModal({id, headText, descText, btnType, actionText}){
     return(
     <>
-        <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="false" data-bs-keyboard="false">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                     <div className="modal-header">

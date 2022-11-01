@@ -1,9 +1,11 @@
 
 import Logo from '../assets/Logo.svg';
+import FormModal from '../Modals/FormModal';
 
 export default function Navbar(){
 
     return(
+        <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div className="container">
                 <a className="navbar-brand" href="/">
@@ -19,7 +21,8 @@ export default function Navbar(){
                         <a className="nav-link btn btn-dark text-white" href="/">Find a Job</a>
                     </li>
                     <li className="nav-item mt-3 mt-md-0">
-                        <a className="nav-link btn btn-dark text-white" href="/">Post a Job</a>
+                        <a className="nav-link btn btn-dark text-white" href="/"
+                         data-bs-toggle="modal" data-bs-target="#formModal" data-bs-backdrop="false" data-bs-keyboard="false">Post a Job</a>
                     </li>
                    
                 </ul>
@@ -27,6 +30,7 @@ export default function Navbar(){
                 </div>
             </div>
         </nav>
-       
+        <FormModal id="formModal"/>
+        </>
     )
 }
