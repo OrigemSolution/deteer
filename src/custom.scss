@@ -1,0 +1,71 @@
+
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./RobotoMono-VariableFont_wght.ttf') format('truetype');
+}
+
+$font-family-base: 'RobotoMono';
+$body-bg: #FAFAFA;
+$secondary: #A1A1AA;
+$warning: #6D28D9;
+$form-check-input-checked-bg-color: #6D28D9;
+$danger: #C00F00;
+
+$dark: #3E3E3E;
+
+
+$utilities: () !default;
+
+$utilities: map-merge((
+    'viewport-height':(
+        property: height,
+        class:vh,
+        responsive: true,
+        values:(
+            10: 10vh,
+            15: 15vh,
+            25: 25vh,
+            50: 50vh,
+            75: 75vh,
+            100: 100vh
+        )
+    ),
+    'viewport-width':(
+        property: width,
+        class:vw,
+        responsive: true,
+        values:(
+            10: 10vw,
+            25: 25vw,
+            50: 50vw,
+            75: 75vw,
+            100: 100vw
+        )
+    ),
+    "translate-middle": (
+      property: transform,
+      class: translate-middle,
+      responsive: true,
+      values: (
+        null: translate(-50%, -50%),
+        x: translateX(-50%),
+        y: translateY(-50%),
+      )
+    ),
+    "width": (
+      property: width,
+      class: w,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+      )
+    )
+), $utilities);
+
+@import '~bootstrap/scss/bootstrap.scss';
+
