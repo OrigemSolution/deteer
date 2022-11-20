@@ -56,13 +56,13 @@ export default function Main(){
     return(
        <div className="container">
         <div className="row pt-4 vh-100">   
-            <div className="col-4 bg-white h-100 border-end pt-3">
+            <div className="col-md-4 bg-white h-100 border-end pt-3">
                 <JobsList jobList={jobDetailsOnly} handleClick={ feedDescriptionArray}/>
             </div>
-            <div className="col-6 bg-white h-100 p-3">
+            <div className="col-md-6 bg-white h-100 p-3">
                 <JobDescription job={jobDescArray} />
             </div>
-            <div className="col-2 h-50">
+            <div className="col-md-2 h-50">
                 <SideBar />
             </div>
         </div>
