@@ -6,7 +6,7 @@ export default function Jumbotron(){
         <section className="border-50 vh-50 bg-primary position-relative mt-5">
             <img src={background} alt="" className="w-100 h-100" />
             <div className="position-absolute top-50 w-100 w-md-50 start-50 translate-middle p-3">
-                <h1 className="text-white text-start text-md-center">
+                <h1 className="text-white text-center px-2">
                     Discover Volunteer Opportunities in Nigeria
                 </h1>
                 <div className="searchBox input-group w-100 w-md-75 mx-auto pt-3 pe-5">

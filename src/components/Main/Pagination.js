@@ -1,7 +1,7 @@
 export default function Pagination(){
 
     return(
-        <nav aria-label="Page tracker">
+        <nav aria-label="Page tracker fixed-bottom">
             <ul className="pagination border-0">
                 <li className="page-item">
                 <a className="page-link border-0 bg-none" href="/" aria-label="Previous">

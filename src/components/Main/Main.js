@@ -1,8 +1,8 @@
 import { useState } from "react";
 import JobDescription from "./JobDescription";
 import JobsList from "./JobsList";
-import Pagination from "./Pagination";
 import SideBar from "./SideBar";
+import JobMobile from "./JobMobile";
 
 const response = [
     {
@@ -55,18 +55,33 @@ export default function Main(){
 
     return(
        <div className="container">
-        <div className="row pt-4 vh-100">   
-            <div className="col-md-4 bg-white h-100 border-end pt-3">
-                <JobsList jobList={jobDetailsOnly} handleClick={ feedDescriptionArray}/>
+        <div className="row pt-4 vh-md-100 h-auto">   
+            <div className="col-4 bg-white h-100 border-end pt-3 d-none d-md-block">
+                {jobDetailsOnly.map(
+                    (job, i) => {
+                        return(
+                            <JobsList job={job} i={i} handleClick={ feedDescriptionArray}/>
+                        )
+                    }
+                )}
             </div>
-            <div className="col-md-6 bg-white h-100 p-3">
+            <div className="col-12 bg-white h-100 border-end pt-3 d-md-none">
+                {jobDetailsOnly.map(
+                    (job, i) => {
+                        return(
+                            <JobMobile job={job} i={i} handleClick={feedDescriptionArray} jobArray={jobDescArray}/>
+                        )
+                    }
+                )}
+            </div>
+            <div className="col-6 bg-white h-100 p-3  d-none d-md-block">
                 <JobDescription job={jobDescArray} />
             </div>
-            <div className="col-md-2 h-50">
+            <div className="col-2 h-50 d-none d-md-block">
                 <SideBar />
             </div>
         </div>
-        <Pagination />
+        
        </div>
     )
 }

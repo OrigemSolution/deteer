@@ -64,7 +64,8 @@ $utilities: map-merge((
         100: 100%,
         auto: auto
       )
-    )
+    ),
+   
 ), $utilities);
 
 @import '~bootstrap/scss/bootstrap.scss';

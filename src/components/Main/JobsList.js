@@ -1,10 +1,15 @@
-export default function JobsList({jobList, handleClick}){
+import { useState } from "react"
+
+export default function JobsList({job, i, handleClick}){
+
+    const[clicked, setClicked] = useState(false)
 
     return(
         <>
-            {jobList.map((job, i) => {
-                return(
-                    <div key={i} onClick={() => handleClick(i)}>
+                    <div key={i} onClick={() => {
+                        handleClick(i)
+                        setClicked(!clicked)
+                    }}>
                         <div className="px-3 d-flex justify-content-between">
                             <div>
                                 <p className="h5 fw-bold">{job.role}</p>
@@ -15,12 +20,15 @@ export default function JobsList({jobList, handleClick}){
                                     {job.datePast} days ago
                                 </p>
                             </div>
+                            
+                            <div className="d-none d-md-block">
+                                {clicked && 
+                                <i className="bi-caret-right-fill text-black"></i>
+                                } 
+                            </div>
                         </div> 
                         <hr />
                     </div>
-                )
-                
-            })}
         </> 
     )
 }

@@ -6,7 +6,7 @@ export default function JobDescription({job}){
         const [showDelete, setShowDelete] = useState(false);
 
         if(job) return(
-                <>
+                <div className="p-3">
                 <div className="d-flex justify-content-between position-relative">
                     <div>
                         <p className="h5">
@@ -20,7 +20,6 @@ export default function JobDescription({job}){
                     </div>
                     <div>
                         <p className="fs-6 text-warning">
-                            {job['jobDetails'].datePast} days ago
                             <i className="bi-three-dots mx-3" onClick={() => setShowDelete(!showDelete)}></i>
                         </p>
                         <div className={showDelete ? "position-absolute vw-25 d-block" : "position-absolute vw-25 d-none"}>
@@ -49,7 +48,7 @@ export default function JobDescription({job}){
                      btnType="btn-danger"
                      actionText="Yes, Delete Opening"/>
                
-                </>
+                </div>
             )
         
         return(
